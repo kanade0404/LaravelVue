@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/accounts/github', 'Auth\OauthController@redirectProvider')->name('githubOauth');
+Route::get('/accounts/github/callback', 'Auth\OauthController@handleProviderCallback')->name('githubOauthCallback');
